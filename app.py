@@ -7,7 +7,7 @@ from qiskit import QuantumCircuit, transpile
 from qiskit_aer import Aer
 from qiskit.visualization import plot_histogram, plot_bloch_multivector
 from qiskit.quantum_info import Statevector
-from qiskit.providers.aer.noise import NoiseModel, depolarizing_error
+from qiskit_aer.noise import NoiseModel, depolarizing_error
 
 # Page Config
 st.set_page_config(page_title="Quantum Circuit Playground", layout="wide")
