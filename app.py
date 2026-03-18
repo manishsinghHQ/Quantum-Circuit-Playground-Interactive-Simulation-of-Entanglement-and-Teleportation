@@ -32,8 +32,13 @@ backend = Aer.get_backend('aer_simulator')
 noise_model = None
 if use_noise:
     noise_model = NoiseModel()
-    error = depolarizing_error(0.05, 1)
-    noise_model.add_all_qubit_quantum_error(error, ['h', 'cx'])
+    # 1-qubit error
+    error_1 = depolarizing_error(0.05, 1)
+    # 2-qubit error
+    error_2 = depolarizing_error(0.05, 2)
+    # Apply correctly
+    noise_model.add_all_qubit_quantum_error(error_1, ['h'])
+    noise_model.add_all_qubit_quantum_error(error_2, ['cx'])
 
 
 # -------------------------------
