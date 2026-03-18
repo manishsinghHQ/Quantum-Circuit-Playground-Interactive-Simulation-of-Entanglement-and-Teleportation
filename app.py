@@ -162,8 +162,8 @@ def teleportation():
     qc.measure([0, 1], [0, 1])
 
     # Conditional corrections
-    qc.cx(1, 2).c_if(qc.cregs[0], 2)
-    qc.cz(0, 2).c_if(qc.cregs[0], 1)
+    qc.cx(1, 2)
+    qc.cz(0, 2)
 
     qc.measure(2, 2)
 
